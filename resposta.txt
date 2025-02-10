@@ -1,1 +1,63 @@
-Coloque aqui todas as respostas das práticas indicadas no README.md
+# Questão 1:
+    1- A rede é 172.18.0.0, a máscara é 255.255.0.0.
+    2- O gateway padrão é 172.18.0.1.
+    3- 2 Rotas, "0.0.0.0" e "172.18.0.1".
+
+# Questão 2:
+    1- O IP da interface de rede é 172.18.0.2.
+    2- A rede é 172.18.0.0, a máscara é /16 (255.255.0.0).
+    3- O nome da interface de rede principal é eth0.
+
+# Questão 3:
+    google: 172.217.30.68
+    whitehouse: 192.0.66.51
+    rnp: 104.18.26.22
+    ufpb: 150.165.254.52
+
+# Questão 4:
+    1- O tempo de resposta foi de 0.077 ms
+     - O tempo de resposta do meu endereço IP foi de 0.143 ms
+    2-  ufpb: 32.213 ms
+        yahoo: 110.986 ms
+        brasil: 123.267 ms
+        
+         O dce estava inacessível. A mensagem foi: "ping: unknown host"
+
+    3-  ping www.google.com: 65.693 ms
+        ping www.rnp.br: 63.426 ms
+        ping www.whitehouse.gov: 61.036 ms
+
+        A localização dos servidores pode influenciar, tendo em vista que servidores mais próximos tendem a ter menor tempo de resposta.
+        
+# Questão 5:
+    1- -Os roteadores ao longo do caminho não respondem porque podem estar bloqueando pacotes ICMP/UDP por segurança, 
+    ou por estarem configurados para não responder ao traceroute.
+        - Isso não significa necessariamente um problema na rede, 
+        pois os sites ainda podem estar acessíveis via ping ou navegador.
+
+# Questão 6:
+    - Os resultados de netstat -r e route -n mostram a mesma tabela de roteamento.
+     A diferença é que netstat -r inclui algumas informações extras, como MSS, Window e irtt, mas nada que altere a rota em si
+
+# Questão 7:
+    O servidor não respondeu. Mensagem: Trying 150.165.254.52...
+Connected to www.ufpb.br.
+Escape character is '^]'.
+^ 
+HTTP/1.1 400 Bad Request
+Server: nginx
+Date: Mon, 10 Feb 2025 14:45:45 GMT
+Content-Type: text/html
+Content-Length: 166
+Connection: close
+
+# Questão 8: 
+    1- O mtr (My Traceroute) é uma ferramenta que combina as funcionalidades do ping e traceroute, fornecendo uma análise contínua do caminho que os pacotes percorrem até um destino. Ele monitora latência e perda de pacotes em tempo real, sendo útil para diagnosticar problemas de rede.
+    2- O mtr é útil para:
+        -Diagnosticar lentidão na rede: Mostra onde pode haver alta latência ou perda de pacotes.
+        -Verificar problemas em roteadores intermediários: Identifica se um salto específico está sobrecarregado ou falhando.
+        -Analisar rotas instáveis: Ajuda a detectar mudanças frequentes de caminho na internet.
+        -Comparar desempenho de conexões: Pode ser usado para testar diferentes ISPs e caminhos de rede.
+    4- Se um salto tem alta latência, mas os próximos são normais, ele pode estar configurado para responder lentamente a ICMP, sem afetar o tráfego real.
+    Se a perda de pacotes começa e continua nos saltos seguintes, pode ser um problema de conexão ou congestionamento.
+    Se um único salto tem alta perda, mas os seguintes estão normais, esse roteador pode estar limitando tráfego ICMP (sem impactar a navegação real).
